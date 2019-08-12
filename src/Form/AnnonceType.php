@@ -24,39 +24,40 @@ class AnnonceType extends ApplicationType
             ->add(
                 'title', 
                 TextType::class, 
-                $this->getConfiguration('Titre', 'Ajoutez un titre à votre annonce')
+                $this->getConfiguration('Titre', 'Ajoutez un titre à votre annonce', ['label_attr' => ['class' => 'col-sm-12']])
             )
             ->add(
                 'slug', 
                 TextType::class, 
                 $this->getConfiguration('Adresse web', 'Tapez l\'adresse web (automatique)', [
-                    'required' => false
+                    'required' => false,
+                    'label_attr' => ['class' => 'col-sm-12']
                 ])
             )
             ->add(
                 'coverImage', 
                 UrlType::class, 
-                $this->getConfiguration('URL de l\'image principale', 'Ajoutez l\'adresse de l\'image principale')
+                $this->getConfiguration('URL de l\'image principale', 'Ajoutez l\'adresse de l\'image principale', ['label_attr' => ['class' => 'col-sm-12']])
             )
             ->add(
                 'introduction', 
                 TextType::class, 
-                $this->getConfiguration('Introduction', 'Donnez une description global de l\'annonce')
+                $this->getConfiguration('Introduction', 'Donnez une description global de l\'annonce', ['label_attr' => ['class' => 'col-sm-12']])
             )
             ->add(
                 'content', 
                 TextareaType::class, 
-                $this->getConfiguration('Description détaillé', 'Donnez une description détaillé')
+                $this->getConfiguration('Description détaillé', 'Donnez une description détaillé', ['label_attr' => ['class' => 'col-sm-12']])
             )
             ->add(
                 'rooms', 
                 IntegerType::class,
-                 $this->getConfiguration('Nombre de chambres', 'Indiquez le nombre de chambre')
+                 $this->getConfiguration('Nombre de chambres', 'Indiquez le nombre de chambre', ['label_attr' => ['class' => 'col-sm-12']])
             )
             ->add(
                 'price', 
                 MoneyType::class, 
-                $this->getConfiguration('Prix', 'Indiquez le prix par nuit')
+                $this->getConfiguration('Prix', 'Indiquez le prix par nuit', ['label_attr' => ['class' => 'col-sm-12']])
             )
             ->add(
                 'images', 
@@ -64,7 +65,8 @@ class AnnonceType extends ApplicationType
                 [
                     'entry_type' => ImageType::class,
                     'allow_add' => true,
-                    'allow_delete' => true
+                    'allow_delete' => true,
+                    'label_attr' => ['class' => 'col-sm-12']
                 ]
             )
         ;

@@ -13,10 +13,10 @@ use Symfony\Component\Form\AbstractType;
      * @return array
      */
     protected function getConfiguration($label, $placeholder, $options = []){
-        return array_merge([
+        return array_merge_recursive([
             'label' => $label,
             'attr' => [
-                'placeholder' => $placeholder
+                'placeholder' => $placeholder,
             ]
         ], $options);
     }
